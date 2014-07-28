@@ -43,5 +43,10 @@ PRODUCT_PACKAGES += \
 	CellBroadcastReceiver \
 	Launcher3
 
+# Chromium Prebuilt
+ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+-include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
+endif
+
 # overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/fml/overlay/common
