@@ -1,0 +1,18 @@
+#!/system/bin/sh
+
+
+echo "======================"
+echo "______ ___  ___ _     "
+echo "|  ___||  \/  || |    "
+echo "| |_   | .  . || |    "
+echo "|  _|  | |\/| || |    "
+echo "| |    | |  | || |____"
+echo "\_|    \_|  |_/\_____/"
+echo "                      "
+echo "======================"
+
+
+# Wait for system to be "up" before doing other stuff
+until [ $(busybox pgrep com.android.systemui) ] ; do
+    busybox sleep 1
+done
