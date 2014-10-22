@@ -13,7 +13,7 @@
 
 # Boot animation
 PRODUCT_COPY_FILES += \
-	vendor/fml/prebuilt/common/bootanimation.zip:system/media/bootanimation.zip
+	vendor/fml/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
 # FML init.rc
 PRODUCT_COPY_FILES += \
@@ -40,4 +40,5 @@ PRODUCT_COPY_FILES += \
 	vendor/fml/prebuilt/common/etc/init.d/00fml:system/etc/init.d/00fml
 
 PRODUCT_PACKAGES += \
-	CellBroadcastReceiver
+	CellBroadcastReceiver \
+	Launcher3
