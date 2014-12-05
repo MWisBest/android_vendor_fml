@@ -8,8 +8,8 @@
 #	Superuser \
 #	su
 
-#PRODUCT_PROPERTY_OVERRIDES += \
-#	persist.sys.root_access=1
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.root_access=3
 
 # Boot animation
 PRODUCT_COPY_FILES += \
