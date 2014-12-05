@@ -12,12 +12,6 @@ echo "                      "
 echo "======================"
 
 
-# pvrsrvinit isn't loading, fix it later though.
-/system/vendor/bin/pvrsrvinit
-
-# SELinux isn't being very kind to us lately, but of course we're fixing that later.
-/system/bin/setenforce 0
-
 # Wait for system to be "up" before doing other stuff
 until [ $(busybox pgrep com.android.systemui) ] ; do
     busybox sleep 1
