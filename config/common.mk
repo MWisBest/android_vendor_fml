@@ -42,3 +42,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	CellBroadcastReceiver \
 	Launcher3
+
+# overlays
+PRODUCT_PACKAGE_OVERLAYS += vendor/fml/overlay/common
