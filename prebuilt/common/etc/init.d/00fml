@@ -1,18 +1,12 @@
 #!/system/bin/sh
+L="log -p i -t FML"
 
-
-echo "======================"
-echo "______ ___  ___ _     "
-echo "|  ___||  \/  || |    "
-echo "| |_   | .  . || |    "
-echo "|  _|  | |\/| || |    "
-echo "| |    | |  | || |____"
-echo "\_|    \_|  |_/\_____/"
-echo "                      "
-echo "======================"
-
-
-# Wait for system to be "up" before doing other stuff
-until [ $(busybox pgrep com.android.systemui) ] ; do
-    busybox sleep 1
-done
+$L "======================"
+$L "______ ___  ___ _     "
+$L "|  ___||  \\/  || |    "
+$L "| |_   | .  . || |    "
+$L "|  _|  | |\\/| || |    "
+$L "| |    | |  | || |____"
+$L "\\_|    \\_|  |_/\\_____/"
+$L "                      "
+$L "======================"
