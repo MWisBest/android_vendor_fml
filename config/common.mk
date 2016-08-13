@@ -39,6 +39,16 @@ PRODUCT_COPY_FILES += \
 	vendor/fml/prebuilt/common/bin/sysinit:system/bin/sysinit \
 	vendor/fml/prebuilt/common/etc/init.d/00fml:system/etc/init.d/00fml
 
+# xposed support
+ifeq ($(USE_XPOSED_FRAMEWORK),true)
+PRODUCT_COPY_FILES += \
+	vendor/fml/prebuilt/common/xposed.prop:system/xposed.prop
+
+PRODUCT_PACKAGES += \
+	XposedBridge \
+	libxposed_art
+endif
+
 PRODUCT_PACKAGES += \
 	CellBroadcastReceiver \
 	Launcher3
