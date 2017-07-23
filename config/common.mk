@@ -1,15 +1,6 @@
 ## Common FML Config ##
 
-# Superuser
-SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE_PREFIX := com.android.settings.fml.superuser
-
-PRODUCT_PACKAGES += \
-	Superuser \
-	su
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.root_access=3
+include vendor/fml/sepolicy/sepolicy.mk
 
 # Boot animation
 PRODUCT_COPY_FILES += \
@@ -43,10 +34,9 @@ PRODUCT_PACKAGES += \
 	CellBroadcastReceiver \
 	Launcher3
 
-# Chromium Prebuilt
-ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
--include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
-endif
+# Backup services whitelist
+PRODUCT_COPY_FILES += \
+	vendor/fml/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
 # overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/fml/overlay/common
